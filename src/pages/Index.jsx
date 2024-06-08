@@ -1,18 +1,42 @@
-// Update this page (the content is just a fallback if you fail and example)
-// Use chakra-ui
-import { Container, Text, VStack } from "@chakra-ui/react";
-
-// Example of using react-icons
-// import { FaRocket } from "react-icons/fa";
-// <IconButton aria-label="Add" icon={<FaRocket />} size="lg" />; // IconButton would also have to be imported from chakra
+import { Container, VStack, HStack, Input, Button, Checkbox, Text, IconButton, Box, Heading, Flex } from "@chakra-ui/react";
+import { FaTrash, FaUserCircle } from "react-icons/fa";
 
 const Index = () => {
   return (
-    <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
-      <VStack spacing={4}>
-        <Text fontSize="2xl">Your Blank Canvas</Text>
-        <Text>Chat with the agent to start making edits.</Text>
+    <Container maxW="container.lg" p={4}>
+      {/* Header */}
+      <Flex as="header" justify="space-between" align="center" mb={6}>
+        <Heading as="h1" size="lg">Todo App</Heading>
+        <IconButton aria-label="User Profile" icon={<FaUserCircle />} size="lg" />
+      </Flex>
+
+      {/* Main Section */}
+      <VStack spacing={4} align="stretch">
+        {/* Add Task Section */}
+        <HStack>
+          <Input placeholder="Add a new task" />
+          <Button colorScheme="teal">Add</Button>
+        </HStack>
+
+        {/* Task List Section */}
+        <VStack spacing={3} align="stretch">
+          <HStack>
+            <Checkbox />
+            <Text flex="1">Sample Task 1</Text>
+            <IconButton aria-label="Delete Task" icon={<FaTrash />} />
+          </HStack>
+          <HStack>
+            <Checkbox />
+            <Text flex="1">Sample Task 2</Text>
+            <IconButton aria-label="Delete Task" icon={<FaTrash />} />
+          </HStack>
+        </VStack>
       </VStack>
+
+      {/* Footer */}
+      <Box as="footer" mt={10} textAlign="center">
+        <Text fontSize="sm">© 2023 Todo App. All rights reserved.</Text>
+      </Box>
     </Container>
   );
 };
