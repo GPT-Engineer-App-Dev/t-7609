@@ -15,7 +15,7 @@ const Index = () => {
         {/* Add Task Section */}
         <HStack>
           <Input placeholder="Add a new task" />
-          <Button colorScheme="teal">Add</Button>
+          <Button colorScheme="green">Add</Button>
         </HStack>
 
         {/* Task List Section */}
